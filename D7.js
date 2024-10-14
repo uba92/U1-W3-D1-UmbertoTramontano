@@ -11,7 +11,7 @@ const joinStr = (str1, str2) => {
   let second = ''
   first = first = str1.charAt(0) + str1.charAt(1)
   second = str2.charAt(str2.length-3) +  str2.charAt(str2.length-2) + str2.charAt(str2.length-1)
-  return first + second 
+  return (first + second).toUpperCase() 
 }
 
 console.log(joinStr(string1,string2))
@@ -47,7 +47,7 @@ console.log('Numeri pari di randomArray: ', findEven)
 */
 
 let arraySum = 0
-myArray.forEach((n) => {
+findEven.forEach((n) => {
   return arraySum += n
 })
 
@@ -58,21 +58,27 @@ console.log(arraySum)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-const evenTotal = findEven.reduce((acc, num) => {
-  return acc+= num
-},0)
+const sumReduce = function () {
+  const total = findEven.reduce((acc, num) => {
+   return acc += num
+  }, 0)  
+  console.log(total)
+}
 
-console.log(evenTotal)
+sumReduce()
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 
-const plusTwenty = findEven.map((num) => {
-  return num + 20
-})
+const incrementNumbers = function (arr,n) {
+  const increment = arr.map ((number) => {
+    return number+n
+  })
+  return increment
+}
 
-console.log (plusTwenty)
+console.log (incrementNumbers(findEven,20))
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
@@ -90,6 +96,23 @@ console.log(stringsLength)
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+const array99 = []
+for (i=0; i<99; i++) {
+  array99.push(i+1)
+}
+
+console.log(array99)
+
+const justOdd = []
+
+array99.forEach((num) => {
+  if (num%2 !== 0){
+    justOdd.push(num)
+  }
+})
+
+console.log(justOdd)
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -210,6 +233,19 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+
+const findOldest = function () {
+  let oldest = movies[0]
+  movies.forEach(movie => {
+    if (parseInt(movie.Year) < parseInt(movie.Year)) {
+      oldest = movie
+    }
+  })
+
+  console.log(oldest)
+}
+
+findOldest()
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
