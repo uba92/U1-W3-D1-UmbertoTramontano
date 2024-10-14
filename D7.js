@@ -79,6 +79,14 @@ console.log (plusTwenty)
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+const stringsArray = ['umberto', 'tramontano', 'marsico nuovo']
+
+const stringsLength = stringsArray.map((str) => {
+  return str.length
+})
+
+console.log(stringsLength)
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
