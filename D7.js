@@ -3,33 +3,56 @@ console.log('It is working')
   Scrivi una funzione per concatenare due stringhe ricevute come parametri, selezionando solamente i primi 2 caratteri della
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
-let stringOne = 'smartphone'
-let stringTwo = 'palo'
 
-const joinChars = (str) => {
+let string1 = 'ciao'
+let string2 = 'bello'
+const joinStr = (str1, str2) => {
   let first = ''
-  first = str.charAt(0) + str.charAt(1)
-  return first
+  let second = ''
+  first = first = str1.charAt(0) + str1.charAt(1)
+  second = str2.charAt(str2.length-3) +  str2.charAt(str2.length-2) + str2.charAt(str2.length-1)
+  return first + second 
 }
 
-const joinChars2 = (str) => {
-  let first = ''
-  first = str.charAt(str.length-3) +  str.charAt(str.length-2) + str.charAt(str.length-1)
-  return first
-}
+console.log(joinStr(string1,string2))
 
-console.log(joinChars(stringOne) + joinChars2(stringTwo))
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
+const randomArray = () => {
+  const arr = []
+  for(i = 0; i<10; i++){
+    arr.push(Math.floor(Math.random()*101))
+  }
+  return arr
+}
+
+const myArray = randomArray()
+console.log(myArray)
+
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
+const findEven = myArray.filter((num) => {
+  return num%2 === 0
+})
+
+console.log('Numeri pari di randomArray: ', findEven)
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+
+let arraySum = 0
+myArray.forEach((n) => {
+  return arraySum += n
+})
+
+console.log(arraySum)
+
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
