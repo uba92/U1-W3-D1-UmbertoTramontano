@@ -58,9 +58,21 @@ console.log(arraySum)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
+const evenTotal = findEven.reduce((acc, num) => {
+  return acc+= num
+},0)
+
+console.log(evenTotal)
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+const plusTwenty = findEven.map((num) => {
+  return num + 20
+})
+
+console.log (plusTwenty)
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
